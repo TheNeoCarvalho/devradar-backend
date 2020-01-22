@@ -11,4 +11,6 @@ routes.get('/devs', DevController.index)
 
 routes.get('/search', SearchController.index)
 
+routes.delete('/dev', DevController.delete)
+
 module.exports = routes

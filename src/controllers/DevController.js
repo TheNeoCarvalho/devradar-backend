@@ -55,5 +55,20 @@ module.exports = {
 
     return res.status(200).json(dev)
 
+  },
+  async delete(req, res) {
+
+    const _id =  req.body.id
+    let dev = await Dev.findOne({ _id })
+
+    if(!dev){
+      res.json({msg: "Usuário não existe"})
+    }else{
+      dev = await Dev.deleteOne({ _id }) 
+    }
+
+    res.json({msg:"Usuário deletado"})
+   
   }
+
 }
